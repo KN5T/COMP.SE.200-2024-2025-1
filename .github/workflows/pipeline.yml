@@ -31,7 +31,10 @@ jobs:
       - name: Run tests with coverage
         run: npm test -- --coverage || true
 
-      - name: Coveralls
+      - name: Upload coverage data to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests
+        run: npm test
